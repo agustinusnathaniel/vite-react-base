@@ -1,10 +1,13 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import react from '@vitejs/plugin-react-swc';
 import million from 'million/compiler';
-import tsConfigPaths from 'vite-tsconfig-paths';
+import { visualizer } from 'rollup-plugin-visualizer';
+import type { PluginOption } from 'vite';
 import { defineConfig } from 'vite';
 import checker from 'vite-plugin-checker';
-import { VitePWA, VitePWAOptions } from 'vite-plugin-pwa';
+import type { VitePWAOptions } from 'vite-plugin-pwa';
+import { VitePWA } from 'vite-plugin-pwa';
+import tsConfigPaths from 'vite-tsconfig-paths';
 
 const pwaOptions: Partial<VitePWAOptions> = {
   registerType: 'autoUpdate',
@@ -30,10 +33,13 @@ export default defineConfig({
     react(),
     checker({
       typescript: true,
-      eslint: { lintCommand: 'eslint "./src/**/*.{js,jsx,ts,tsx}"' },
+      eslint: {
+        lintCommand: 'eslint "./src/**/*.{js,jsx,ts,tsx}"',
+      },
     }),
     tsConfigPaths(),
     VitePWA(pwaOptions),
+    visualizer({ template: 'sunburst' }) as unknown as PluginOption,
   ],
   server: {
     open: true,
