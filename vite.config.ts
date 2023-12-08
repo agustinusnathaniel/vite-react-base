@@ -21,8 +21,15 @@ const pwaOptions: Partial<VitePWAOptions> = {
     background_color: '#FFFFFF',
     dir: 'ltr',
     display: 'standalone',
-    orientation: 'portrait',
+    orientation: 'natural',
     prefer_related_applications: false,
+    icons: [
+      {
+        src: '/assets/favicon.svg',
+        purpose: 'maskable any',
+        sizes: '48x48 72x72 96x96 128x128 256x256',
+      },
+    ],
   },
 };
 
