@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react';
 
+import Meta from '@/lib/layout/Meta';
+
 import Footer from './Footer';
 
 type LayoutProps = {
@@ -9,6 +11,7 @@ type LayoutProps = {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div>
+      <Meta />
       <main>{children}</main>
       <Footer />
     </div>
