@@ -21,7 +21,6 @@ const pwaOptions: Partial<VitePWAOptions> = {
     background_color: '#FFFFFF',
     dir: 'ltr',
     display: 'standalone',
-    orientation: 'natural',
     prefer_related_applications: false,
     icons: [
       {
