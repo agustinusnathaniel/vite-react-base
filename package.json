@@ -11,7 +11,7 @@
     "lint": "pnpm dlx @biomejs/biome lint ./src",
     "toolchain:fix": "pnpm dlx @biomejs/biome check --apply ./src vite.config.ts commitlint.config.cjs",
     "type-check": "tsc",
-    "check:turbo": "npx turbo lint type-check",
+    "check:turbo": "pnpm dlx turbo@latest lint type-check",
     "up-interactive": "pnpm up -i",
     "up-latest": "pnpm up-interactive -L",
     "release": "standard-version",
