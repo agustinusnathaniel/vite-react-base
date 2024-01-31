@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "vite:build": "vite build",
-    "build": "npx turbo type-check vite:build",
+    "build": "vite build",
     "serve": "vite preview",
     "lint": "pnpm dlx @biomejs/biome lint ./src",
     "toolchain:fix": "pnpm dlx @biomejs/biome check --apply ./src vite.config.ts commitlint.config.cjs",
