@@ -10,7 +10,7 @@
     "serve": "vite preview",
     "lint": "pnpm biome lint ./src",
     "toolchain:fix": "pnpm biome check --apply ./src vite.config.ts commitlint.config.cjs",
-    "type-check": "tsc",
+    "type-check": "tsc -b",
     "turbo": "pnpm dlx turbo@2.0.9",
     "test": "vitest run",
     "test:ui": "vitest --ui --coverage",
