@@ -11,12 +11,12 @@
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import RequireAuth from '@/lib/components/auth/RequireAuth';
+import { RequireAuth } from '@/lib/components/auth/require-auth';
 import Page404 from '@/lib/pages/404';
 
 import { privateRoutes, routes } from './routes';
 
-const Routings = () => {
+export const Routings = () => {
   return (
     <Suspense>
       <Routes>
@@ -41,5 +41,3 @@ const Routings = () => {
     </Suspense>
   );
 };
-
-export default Routings;

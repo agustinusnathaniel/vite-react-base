@@ -1,4 +1,4 @@
-const SomeText = () => {
+export const SomeText = () => {
   return (
     <div>
       <h1>vite-react-ts</h1>
@@ -8,5 +8,3 @@ const SomeText = () => {
     </div>
   );
 };
-
-export default SomeText;

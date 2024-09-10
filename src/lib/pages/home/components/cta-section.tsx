@@ -1,6 +1,6 @@
 const repoName = 'sozonome/vite-react-ts';
 
-const CTASection = () => {
+export const CTASection = () => {
   return (
     <div>
       <div>
@@ -43,5 +43,3 @@ const CTASection = () => {
     </div>
   );
 };
-
-export default CTASection;

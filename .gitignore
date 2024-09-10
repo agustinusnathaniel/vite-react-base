@@ -7,6 +7,9 @@ dist-ssr
 yarn-error.log*
 .pnpm-debug.log*
 
+# TS
+*.tsbuildinfo
+
 # Turbo
 .turbo
 

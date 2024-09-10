@@ -1,21 +1,18 @@
 import type { ReactNode } from 'react';
 
-import Meta from '@/lib/layout/Meta';
-
-import Footer from './Footer';
+import { Footer } from './components/footer';
+import { Meta } from './components/meta';
 
 type LayoutProps = {
   children: ReactNode;
 };
 
-const Layout = ({ children }: LayoutProps) => {
+export const Layout = ({ children }: LayoutProps) => {
   return (
-    <div>
+    <>
       <Meta />
       <main>{children}</main>
       <Footer />
-    </div>
+    </>
   );
 };
-
-export default Layout;

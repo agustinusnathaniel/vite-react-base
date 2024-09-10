@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet';
 
 const APP_NAME = 'vite-react-ts';
 
-const Meta = () => {
+export const Meta = () => {
   return (
     <Helmet>
       <title>Vite React TypeScript Starter</title>
@@ -23,5 +23,3 @@ const Meta = () => {
     </Helmet>
   );
 };
-
-export default Meta;
