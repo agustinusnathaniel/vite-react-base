@@ -38,6 +38,7 @@ export default defineConfig({
     react(),
     checker({
       typescript: true,
+      biome: true,
     }),
     tsConfigPaths(),
     VitePWA(pwaOptions),
