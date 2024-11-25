@@ -1,4 +1,4 @@
-const repoName = 'sozonome/vite-react-ts';
+const repoName = 'agustinusnathaniel/vite-react-ts';
 
 export const CTASection = () => {
   return (
