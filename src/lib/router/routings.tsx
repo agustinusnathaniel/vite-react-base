@@ -9,7 +9,7 @@
  */
 
 import { Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
 import { RequireAuth } from '@/lib/components/auth/require-auth';
 import Page404 from '@/lib/pages/404';
@@ -17,8 +17,10 @@ import Page404 from '@/lib/pages/404';
 import { privateRoutes, routes } from './routes';
 
 export const Routings = () => {
+  const { pathname } = useLocation();
+
   return (
-    <Suspense>
+    <Suspense key={pathname} fallback={<div>Loading...</div>}>
       <Routes>
         {routes.map((routeProps) => (
           <Route {...routeProps} key={routeProps.path as string} />
