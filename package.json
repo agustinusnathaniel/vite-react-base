@@ -6,9 +6,12 @@
   "type": "module",
   "engines": {
     "node": ">=22.11.x",
-    "pnpm": ">=9"
+    "pnpm": ">=10"
   },
-  "packageManager": "pnpm@9.13.2",
+  "packageManager": "pnpm@10.7.1",
+  "pnpm": {
+    "neverBuiltDependencies": []
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -17,7 +20,7 @@
     "biome:fix": "pnpm biome:check --write",
     "biome:ci": "biome ci",
     "type:check": "tsc",
-    "turbo": "pnpm dlx turbo@2.0.11",
+    "turbo": "pnpm dlx turbo@2.5.0",
     "test": "vitest run",
     "test:ui": "vitest --ui --coverage",
     "test:coverage": "vitest --coverage run",
