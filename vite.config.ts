@@ -1,4 +1,6 @@
-import react from '@vitejs/plugin-react-swc';
+import { ValidateEnv } from '@julr/vite-plugin-validate-env';
+import { tanstackRouter } from '@tanstack/router-plugin/vite';
+import viteReact from '@vitejs/plugin-react-swc';
 import { visualizer } from 'rollup-plugin-visualizer';
 import type { PluginOption } from 'vite';
 import { defineConfig } from 'vite';
@@ -8,6 +10,8 @@ import { VitePWA } from 'vite-plugin-pwa';
 import tsConfigPaths from 'vite-tsconfig-paths';
 
 const pwaOptions: Partial<VitePWAOptions> = {
+  // TODO: enable if you want to enable PWA service worker
+  disable: true,
   registerType: 'autoUpdate',
   base: '/',
   manifest: {
@@ -30,7 +34,9 @@ const pwaOptions: Partial<VitePWAOptions> = {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react(),
+    ValidateEnv(),
+    tanstackRouter({ autoCodeSplitting: true }),
+    viteReact(),
     checker({
       typescript: true,
       biome: true,
