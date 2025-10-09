@@ -1,6 +1,6 @@
 import { ValidateEnv } from '@julr/vite-plugin-validate-env';
 import { tanstackRouter } from '@tanstack/router-plugin/vite';
-import viteReact from '@vitejs/plugin-react-oxc';
+import viteReact from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
 import type { PluginOption } from 'vite';
 import { defineConfig } from 'vite';
