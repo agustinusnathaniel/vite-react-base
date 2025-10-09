@@ -32,20 +32,28 @@ const pwaOptions: Partial<VitePWAOptions> = {
 };
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [
-    ValidateEnv(),
-    tanstackRouter({ autoCodeSplitting: true }),
-    viteReact(),
-    checker({
-      typescript: true,
-      biome: true,
-    }),
-    tsConfigPaths(),
-    VitePWA(pwaOptions),
-    visualizer({ template: 'sunburst' }) as unknown as PluginOption,
-  ],
-  server: {
-    open: true,
-  },
+export default defineConfig(({ mode }) => {
+  const isCheckDisabled = mode === 'production' || !!process.env.VITEST;
+
+  return {
+    plugins: [
+      ValidateEnv(),
+      tanstackRouter({ autoCodeSplitting: true }),
+      viteReact(),
+      ...(!isCheckDisabled
+        ? [
+            checker({
+              typescript: true,
+              biome: true,
+            }),
+          ]
+        : []),
+      tsConfigPaths(),
+      VitePWA(pwaOptions),
+      visualizer({ template: 'sunburst' }) as unknown as PluginOption,
+    ],
+    server: {
+      open: true,
+    },
+  };
 });
