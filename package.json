@@ -51,6 +51,7 @@
     "@commitlint/config-conventional": "^20.0.0",
     "@commitlint/types": "^20.0.0",
     "@julr/vite-plugin-validate-env": "^2.2.0",
+    "@tanstack/react-devtools": "^0.7.4",
     "@types/node": "^24.7.0",
     "@types/react": "19.2.2",
     "@types/react-dom": "^19.2.1",

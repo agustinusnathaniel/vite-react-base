@@ -1,11 +1,12 @@
+import { TanStackDevtools } from '@tanstack/react-devtools';
 import type { QueryClient } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { ReactQueryDevtoolsPanel } from '@tanstack/react-query-devtools';
 import {
   createRootRouteWithContext,
   HeadContent,
   Outlet,
 } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
+import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
 
 import { Layout } from '@/lib/layout';
 
@@ -121,8 +122,18 @@ export const Route = createRootRouteWithContext<{
       <Layout>
         <Outlet />
       </Layout>
-      <TanStackRouterDevtools position="bottom-right" />
-      <ReactQueryDevtools initialIsOpen={false} />
+      <TanStackDevtools
+        plugins={[
+          {
+            name: 'TanStack Router',
+            render: <TanStackRouterDevtoolsPanel />,
+          },
+          {
+            name: 'TanStack Query',
+            render: <ReactQueryDevtoolsPanel />,
+          },
+        ]}
+      />
     </>
   ),
 });
