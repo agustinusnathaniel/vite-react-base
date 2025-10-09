@@ -8,7 +8,6 @@ import { queryClient } from '@/lib/services/api/constants';
 import { routeTree } from './routeTree.gen';
 
 import '@/lib/styles/globals.css';
-import '@fontsource-variable/plus-jakarta-sans';
 
 import Page404 from '@/lib/pages/404';
 
