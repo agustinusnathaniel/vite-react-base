@@ -1,4 +1,5 @@
 import { ValidateEnv } from '@julr/vite-plugin-validate-env';
+import { devtools } from '@tanstack/devtools-vite';
 import { tanstackRouter } from '@tanstack/router-plugin/vite';
 import viteReact from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
@@ -38,6 +39,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [
       ValidateEnv(),
+      devtools(),
       tanstackRouter({ autoCodeSplitting: true }),
       viteReact(),
       ...(!isCheckDisabled
